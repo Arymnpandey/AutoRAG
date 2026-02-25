@@ -30,7 +30,7 @@ if query:
     if st.session_state.vectorstore is None:
         st.warning("Please upload documents first !!")
     else:
-        search_engine = RAGSearch(vectorstore)
+        search_engine = RAGSearch(st.session_state.vectorstore)
         response = search_engine.search_and_summarize(query)
         st.markdown("### 🤖 Answer")
     
